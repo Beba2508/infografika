@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infografika: CRA s HOSTOM Analiza</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fc;
+    }
+    .score-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s;
+    }
+    .score-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    }
+    .rank-gradient {
+      background-image: linear-gradient(to right, #4c51bf, #667eea);
+    }
+    .strongest-score { background-color: #10b981; }
+    .weakest-score { background-color: #f97316; }
+    .category-bar-wrapper {
+      background-color: #e5e7eb;
+      border-radius: 9999px;
+      height: 8px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="p-4 sm:p-8">
+
+  <!-- Glavni Kontejner Infografike -->
+  <div class="max-w-4xl mx-auto">
+
+    <header class="text-center mb-10 p-6 rank-gradient text-white rounded-xl">
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-2">ANALIZA RECENZIJA: CRA S HOSTOM</h1>
+      <p class="text-lg font-medium opacity-90">Uvid u 250 recenzija za 9 objekata (Prosjek grupe: 8.82)</p>
+    </header>
+
+    <!-- 1. Rang Lista Objekata -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-400 pb-2">1. Rang Lista: Prosječna Ocjena Objekta</h2>
+      <div id="rank-list" class="space-y-3"></div>
+    </section>
+
+    <!-- 2. Glavni Zaključak Grupe -->
+    <section class="mb-12 p-6 bg-indigo-100 rounded-xl">
+      <h2 class="text-2xl font-bold text-indigo-800 mb-4 flex items-center">
+        Glavni Zaključak Grupe (Prosjek 8.82)
+      </h2>
+      <p class="text-gray-700 leading-relaxed font-medium">
+        Cjelokupna grupa objekata ostvaruje <strong>odličan prosjek (8.82)</strong>, vođen izvanrednim rezultatima u <strong>Lokaciji</strong> i <strong>Čistoći</strong>. 
+        Ključni fokus na poboljšanje mora biti usmjeren na percepciju <strong>Vrijednosti za novac</strong>, gdje gosti najčešće izražavaju nezadovoljstvo, 
+        te na dizanje rezultata objekata <strong>Monte</strong> i <strong>riva</strong> ispod 8.0.
+      </p>
+    </section>
+
+    <!-- 3. Detaljni Prosjek Svih Kategorija -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-400 pb-2">3. Detaljni Prosjek po Kategorijama (Sveukupno)</h2>
+      <div id="category-summary-card" class="score-box p-6 border-l-4 border-indigo-500"></div>
+    </section>
+
+    <!-- 4. Ključna Zapažanja -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-400 pb-2">4. Ključna Zapažanja</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="score-box p-5 border-t-8 border-green-500">
+          <h3 class="text-xl font-bold text-green-700 mb-2">🏆 Najjača Kategorija</h3>
+          <p class="text-3xl font-black text-gray-900 mb-3">LOKACIJA (9.39)</p>
+          <p class="text-sm text-gray-600">Gosti izuzetno cijene položaj smještaja. Ova kategorija postavlja standard za cijelu grupu.</p>
+        </div>
+
+        <div class="score-box p-5 border-t-8 border-red-500">
+          <h3 class="text-xl font-bold text-red-700 mb-2">📉 Kategorije za Poboljšanje</h3>
+          <p class="text-3xl font-black text-gray-900 mb-3">VRIJEDNOST ZA NOVAC (8.33)</p>
+          <p class="text-sm text-gray-600">Gotovo cijela točka zaostatka u odnosu na Lokaciju. Ovo je najkritičnije područje za povećanje zadovoljstva gostiju.</p>
+        </div>
+
+        <div class="score-box p-5 border-t-8 border-blue-500 md:col-span-2">
+          <h3 class="text-xl font-bold text-blue-700 mb-2">Ekstremni Performansi Objekata</h3>
+          <p class="text-sm text-gray-600">Tri objekta vode s ocjenama iznad 9.19, dok su dva objekta znatno ispod prosjeka:</p>
+          <ul class="mt-3 space-y-2">
+            <li class="flex justify-between items-center text-sm font-medium">
+              <span class="font-bold text-green-600">Top Performeri:</span>
+              <span class="text-gray-700">Andrea (9.21), la casita (9.20), grand (9.19)</span>
+            </li>
+            <li class="flex justify-between items-center text-sm font-medium">
+              <span class="font-bold text-red-600">Objekti ispod 8.0:</span>
+              <span class="text-gray-700">Monte (7.89) i riva (7.88)</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="text-center text-gray-500 text-xs mt-10 p-4 border-t border-gray-200">
+      Analiza generirana na temelju dostavljenih prosječnih ocjena.
+    </footer>
+
+  </div>
+
+  <script>
+    const propertyData = [
+      { name: "Andrea", overall: 9.21, reviews: 14, color: 'text-yellow-600', border: 'border-yellow-500' },
+      { name: "la casita", overall: 9.20, reviews: 15, color: 'text-yellow-600', border: 'border-yellow-500' },
+      { name: "grand", overall: 9.19, reviews: 27, color: 'text-yellow-600', border: 'border-yellow-500' },
+      { name: "Lakovich", overall: 9.11, reviews: 62, color: 'text-indigo-600', border: 'border-indigo-500' },
+      { name: "rovigno bella", overall: 9.05, reviews: 37, color: 'text-indigo-600', border: 'border-indigo-500' },
+      { name: "Loft 48", overall: 9.00, reviews: 4, color: 'text-indigo-600', border: 'border-indigo-500' },
+      { name: "Marveda", overall: 8.86, reviews: 14, color: 'text-gray-600', border: 'border-gray-400' },
+      { name: "Monte", overall: 7.89, reviews: 28, color: 'text-red-600', border: 'border-red-500' },
+      { name: "riva", overall: 7.88, reviews: 49, color: 'text-red-600', border: 'border-red-500' }
+    ];
+
+    const groupAverages = {
+      Osoblje: 8.73,
+      Čistoća: 9.02,
+      Lokacija: 9.39, 
+      Sadržaji: 8.80,
+      Udobnost: 8.87,
+      "Vrijednost za novac": 8.33, 
+    };
+
+    function createRankCard(data, index) {
+      let rankColor = 'text-gray-400';
+      let borderColor = 'border-gray-300';
+      
+      if (index < 3) {
+        rankColor = 'text-yellow-500';
+        borderColor = 'border-yellow-500';
+      } else if (data.overall < 8.0) {
+        rankColor = 'text-red-500';
+        borderColor = 'border-red-500';
+      }
+      
+      return `
+        <div class="score-box p-4 flex items-center justify-between border-l-4 ${borderColor}">
+          <div class="flex items-center">
+            <span class="text-3xl font-black ${rankColor} mr-4">${index + 1}.</span>
+            <div>
+              <p class="font-bold text-lg text-gray-900">${data.name}</p>
+              <p class="text-xs text-gray-500">${data.reviews} recenzija</p>
+            </div>
+          </div>
+          <span class="text-2xl font-extrabold ${data.color}">${data.overall.toFixed(2)}</span>
+        </div>
+      `;
+    }
+
+    function createCategorySummary(averages) {
+      let html = `<ul class="space-y-4">`;
+      const categories = [
+        { name: "Lokacija", score: averages.Lokacija, isExtreme: 'strongest' },
+        { name: "Čistoća", score: averages.Čistoća },
+        { name: "Udobnost", score: averages.Udobnost },
+        { name: "Sadržaji", score: averages.Sadržaji },
+        { name: "Osoblje", score: averages.Osoblje },
+        { name: "Vrijednost za novac", score: averages["Vrijednost za novac"], isExtreme: 'weakest' },
+      ];
+
+      categories.forEach(cat => {
+        const barWidth = (cat.score / 10.0) * 100;
+        let barColor = 'bg-indigo-500';
+        if (cat.isExtreme === 'strongest') barColor = 'strongest-score';
+        if (cat.isExtreme === 'weakest') barColor = 'weakest-score';
+
+        html += `
+          <li>
+            <div class="flex justify-between text-sm font-medium text-gray-600 mb-1">
+              <span class="font-semibold text-gray-800">${cat.name}</span>
+              <span class="font-bold ${cat.isExtreme === 'strongest' ? 'text-green-600' : (cat.isExtreme === 'weakest' ? 'text-red-600' : 'text-gray-700')}">${cat.score.toFixed(2)}</span>
+            </div>
+            <div class="category-bar-wrapper">
+              <div class="${barColor} h-2.5 rounded-full" style="width: ${barWidth}%;"></div>
+            </div>
+          </li>
+        `;
+      });
+
+      html += `</ul>`;
+      return html;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const rankContainer = document.getElementById('rank-list');
+      const summaryContainer = document.getElementBy
